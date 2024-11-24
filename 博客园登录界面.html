@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客园</title>
+    <script>
+    </script>
+    <style>
+        body {
+            background-image: repeating-linear-gradient(to right,lightblue,skyblue);
+        }
+
+        #main {
+            width: 400px;
+            /* min-width: 300px;
+            max-width: 400px; */
+            height: 550px;
+            padding: 20px 0;
+            margin: 0 auto;
+            border:1px solid transparent;
+            box-shadow: 5px 5px 10px rgb(44, 137, 208);
+        }
+        header {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        header>h2 {
+            margin: 20px 0;
+            font-weight: normal;
+        }
+
+        header>img {
+            width: 80px;
+        }
+
+        header>span {
+            margin-bottom: 5px;
+        }
+
+        header>span {
+            display: block;
+        }
+
+        header>em {
+            color: deepskyblue;
+            font-style: normal;
+        }
+
+        .content {
+            text-align: center;
+            width: 100%;
+        }
+
+        .content>span {
+            display: inline-block;
+            line-height: 40px;
+            height: 40px;
+            width: 120px;
+            /* background-color: orange; */
+            border-bottom: 0;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .content>form>input {
+            font-size: 15px;
+            float: left;
+        }
+
+        .content>form>label {
+            float: left;
+            font-size: 15px;
+        }
+
+
+        .content>iframe {
+            margin: 0 auto;
+            display: block;
+            height: 230px;
+        }
+
+        .content>span>a{
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+        }
+ 
+        .content button {
+            display: inline-block;
+            width: 4em;
+            height: 2em;
+            background-color: deepskyblue;
+            font-size: 18px;
+            border: 1px solid deepskyblue;
+            border-radius: 5px;
+        }
+
+        .content form {
+            display: block;
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        #pwd_login {
+            border-bottom: 3px solid deepskyblue;
+        }
+
+        footer {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        .clearfix::after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        footer::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .rightfix {
+            float: right;
+        }
+
+        .leftfix {
+            float: left;
+        }
+
+        footer>.left {
+            float: left;
+        }
+
+        footer p {
+            font-size:10px;
+        }
+
+        footer em a {
+            color: deepskyblue;
+            font-style: normal;
+            text-decoration: none;
+        }
+
+        footer .right>img {
+            width: 20px;
+            height: 20px;
+        }
+
+        footer .right {
+            float: right;
+        }
+
+    </style>
+    <script>
+        function checkLogin(e) {
+            const srcElement = e.srcElement;
+            let elements = document.getElementsByClassName("login");
+            let iframe = document.getElementById("childForm");
+            const index = srcElement.dataset.index;
+            if ( index == "0" ) {
+                iframe.src = `./密码登录.html`;
+            } else {
+                iframe.src = `./短信登录.html`;
+            }
+            srcElement.style.borderBottom = `3px solid deepskyblue`;
+            elements[1-index].style.borderBottom = `3px solid transparent`;
+        }
+    </script>
+</head>
+<body>
+    <div id="main">
+        <header>
+            <h2>博客园用户登录</h2>
+            <img src="./sign-in-avatar.svg" alt="">
+            <span>代码改变世界</span>
+            <em>升级成为园子VIP会员</em>
+        </header>
+        <div class="content">
+            <span><a href="#" data-index=0 onclick="checkLogin(event)" id="pwd_login" class="login">密码登录</a></span>
+            <span><a href="#" data-index=1 onclick="checkLogin(event)" id="sms_login" class="login">短信登录</a></span>
+            <iframe src="./短信登录.html" frameborder="0" id="childForm"></iframe>
+        </div>
+        <footer>
+            <div class="container clearfix">
+                <div class="left leftfix">
+                    <p>第三方登录注册</p>
+                    <p>没有账号,<em><a href="#">立即注册</a></em></p>
+                </div>
+                <div class="right rightfix">
+                    <img src="./WeChat.png" alt="微信">
+                    <img src="./QQ.png" alt="QQ">
+                    <img src="./GitHub.png" alt="github">
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>短信登录</title>
+    <style>
+        .main {
+            width: 100%;
+            height: 200px;
+            margin-top: 20px;
+            font-size: 0;
+            box-sizing: border-box;
+        }
+
+        input {
+            outline: none;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            margin:0 auto;
+            box-sizing: border-box;
+            padding: 5px;
+            border: 1px solid deepskyblue;
+            font-size: 15px;
+            margin-bottom: 15px;
+            height: 32px;
+            vertical-align: bottom;
+        }
+
+        input:focus {
+            border: 1px solid hotpink;
+        }
+
+        .code {
+            width: 20%;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .phone {
+            width: 80%;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .checkCode {
+            width: 60%;
+            border-radius: 5px 0 0 5px;
+            margin-bottom: 0px;
+        }
+
+        .getCode {
+            width: 40%;
+            border-radius: 0 5px 5px 0;
+            color: deepskyblue;
+            background-color: transparent;
+            margin-bottom: 0px;
+        }
+
+        #remember_me{
+            height: 20px;
+            width: 20px;
+            margin: 15px 0;
+            padding: 0px;
+            vertical-align: middle;
+        }
+
+        #binLogin {
+            display: block;
+            width: 80px;
+            height: 40px;
+            margin: 0 auto;
+            background: deepskyblue;
+            color: white;
+            padding: 0;
+            border: 0;
+            border-radius: 5px;
+        }
+
+        .rme label {
+            font-size: 15px;
+            vertical-align: middle;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <input type="text" class="code" placeholder="+86">
+        <input type="text" class="phone" placeholder="手机号">
+        <input type="text" class="checkCode" placeholder="验证码">
+        <input type="button" value="获取验证码" class="getCode">
+        <div class="rme">
+            <input type="checkbox" name="remember" id="remember_me">
+            <label for="remember_me">记住我</label>
+        </div>
+        <button id="binLogin">登录</button>
+    </div>
+</body>
+</html>

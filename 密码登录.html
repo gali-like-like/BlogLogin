@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>密码登录</title>
+    <style>
+        .main {
+            width: 100%;
+            height: 200px;
+            margin: 0 auto;
+            margin-top: 20px;
+            box-sizing: border-box;
+        }
+        .main input {
+            outline: none;
+            width: 100%;
+            line-height: 20px;
+            height: 32px;
+            border-radius: 5px;
+            padding: 0 5px;
+            border: 1px solid deepskyblue;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+
+        .main input:focus {
+            border-radius: 5px;
+            border: 1px solid hotpink;
+        }
+
+        .main em {
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            text-align: right;
+            font-size: 10px;
+            height: 1.5em;
+            color: deepskyblue;
+        }
+
+        .main a {
+            text-decoration: none;
+            font-style: normal;
+            color: deepskyblue;
+        }
+
+        .clearfix {
+            display: block;
+            content: "";
+            clear: both;
+        }
+
+        .rme {
+            font-size: 0;
+        }
+
+        #remember_me{
+            height: 20px;
+            width: 20px;
+            margin: 0px;
+            margin-bottom: 15px;
+            padding: 0px;
+            vertical-align: bottom;
+        }
+
+        #binLogin {
+            display: block;
+            width: 80px;
+            height: 40px;
+            margin: 0 auto;
+            padding: 0;
+            border: 0;
+            background: deepskyblue;
+            color: white;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        #binLogin:hover {
+            top: -5px;
+            box-shadow: 5px 5px 5px rgb(100, 149, 218);
+        }
+
+        .rme label {
+            vertical-align: top;
+            font-size: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <input type="text" placeholder="登录用户名/邮箱"><br>
+        <em><a href="#">忘记登录用户名</a></em>
+        <input type="password" name="password" id="pwd" placeholder="密码"><br>
+        <em><a href="#">忘记密码</a></em>
+        <div class="rme">
+            <input type="checkbox" name="remember" id="remember_me">
+            <label for="remember_me">记住我</label>
+        </div>
+        <button id="binLogin">登录</button>
+    </div>    
+</body>
+</html>
